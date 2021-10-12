@@ -1,24 +1,20 @@
-# README
+Grocery List
+User 
+  Profile 
+lists 
+  title
+  desc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  create_at
 
-Things you may want to cover:
+items
+  name
+  desc
 
-* Ruby version
+notes 
+  body
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User has many lists
+list has many items, list belongs to a user 
+items has many notes, item belongs to a list 
+notes belongs to a item
