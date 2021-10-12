@@ -7,11 +7,16 @@ export const ListConsumer = ListContext.Consumer;
 const ListProvider = ({ children }) => {
   const [lists, setLists] = useState([])
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   axios.get('/api/lists')
+  //     .then( res => setLists(res.data) )
+  //     .catch( err => console.log(err))
+  // }, [])
+  const grabLists = () => {
     axios.get('/api/lists')
       .then( res => setLists(res.data) )
       .catch( err => console.log(err))
-  }, [])
+  }
 
   const addList = (list) => {
     axios.post('/api/lists', { list })
@@ -46,6 +51,7 @@ const ListProvider = ({ children }) => {
   return (
     <ListContext.Provider value={{
       lists,
+      grabLists: grabLists,
       addList: addList,
       updateList: updateList,
       deleteList: deleteList,

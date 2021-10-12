@@ -13,6 +13,13 @@ const Navbar = ({ user, handleLogout, history, location }) => {
             name='logout'
             onClick={() => handleLogout(history)}
           />
+          <Link to='/lists'>
+            <Menu.Item
+              id='lists'
+              name='lists'
+              active={location.pathname === '/lists'}
+            />
+          </Link>
         </Menu.Menu>
       )
     } else {
