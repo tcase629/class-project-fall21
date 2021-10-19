@@ -7,6 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import ListProvider from './providers/ListProvider';
+import ItemProvider from './providers/ItemProvider';
 
 initMiddleware();
 
@@ -14,9 +15,11 @@ ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <ListProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <ItemProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ItemProvider>
       </ListProvider>  
     </AuthProvider>  
   </React.StrictMode>,

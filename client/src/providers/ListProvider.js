@@ -36,14 +36,16 @@ const ListProvider = ({ children }) => {
           return l
         })
         setLists(updatedLists)
+        window.location.href = '/lists'
       })
       .catch( err => console.log(err))
   }
 
   const deleteList = (id) => {
-    axios.delete(`api/lists/${id}`)
+    axios.delete(`/api/lists/${id}`)
       .then(res => {
         setLists(lists.filter( l => l.id !== id))
+        window.location.href = '/lists'
       })
       .catch( err => console.log(err))
   }

@@ -8,7 +8,7 @@ const ListForm = ({ addList, title, desc, id, updateList }) => {
     if (id) {
       setList({ title, desc })
     }
-  })
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
